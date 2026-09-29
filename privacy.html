@@ -6,33 +6,50 @@
 <title>Privacy Policy · Midlight TV Uploader</title>
 <style>
   body { margin: 0; background: #120B09; color: #FFF6E8; font: 18px/1.6 system-ui, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 64px 20px; }
-  h1 { font-size: 36px; } h2 { font-size: 22px; margin-top: 32px; } a { color: #FFC90E; }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 20px; }
+  h1 { font-size: 38px; margin: 0 0 8px; } h2 { font-size: 22px; margin-top: 32px; } a { color: #FFC90E; }
+  .muted { color: #AD9884; } nav { margin: 0 0 32px; font-size: 16px; }
+  .yt { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #3a2a20; border-radius: 10px;
+        padding: 10px 14px; background: #22160F; margin: 16px 0; }
+  .yt b { color: #FF0000; white-space: nowrap; } code { background: #22160F; padding: 1px 5px; border-radius: 4px; }
 </style>
 </head>
 <body>
 <main>
+  <nav><a href="./">Home</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></nav>
   <h1>Privacy policy</h1>
-  <p>Last updated: 2026-09-27. Applies to the "Midlight TV Uploader" Google API client.</p>
+  <p class="muted">Last updated: 2026-09-29. Applies to the "Midlight TV Uploader" API client.</p>
+  <h2>YouTube API Services</h2>
+  <p>This app uses <b>YouTube API Services</b>. By using it you agree to be bound by the
+  <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of data is described in the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a> (https://policies.google.com/privacy).</p>
   <h2>Who uses it</h2>
-  <p>Only the owner of the Midlight TV channel. The app is not offered to the public.</p>
-  <h2>What Google data it accesses</h2>
+  <p>Only the owner of the Midlight TV channel. The app is not offered to the public and no other Google account is
+  ever authorized.</p>
+  <h2>What information it accesses, and how it is used</h2>
   <ul>
-    <li><b>YouTube</b> (scopes <code>youtube.upload</code>, <code>youtube.force-ssl</code>): uploads episodes to the owner's
-    channel as unlisted or private drafts, sets thumbnails and captions, reads the status of its own uploads, manages the
-    "All episodes" playlist, and deletes superseded drafts it uploaded itself.</li>
-    <li><b>Google Drive</b> (scope <code>drive.file</code>): creates and updates only the files and folders the app itself
-    creates (episode renders and build-guide zips). It cannot see other Drive files.</li>
+    <li><b>YouTube</b> (scopes <code>youtube.upload</code> and <code>youtube.force-ssl</code>), for the owner's channel only:
+    uploads the channel's own episodes (video, title, description, tags), sets their thumbnails and English captions,
+    reads the processing status of its own uploads, lists and updates the channel's "All episodes" playlist, and deletes
+    earlier review copies it uploaded itself.</li>
+    <li>It does not read comments, subscribers, analytics, or any data about viewers or other channels.</li>
   </ul>
-  <h2>How data is stored and shared</h2>
-  <p>OAuth refresh tokens are stored as encrypted GitHub Actions secrets in the owner's repository. Episode text
-  (scripts, metadata) is stored in that repository. No Google user data is sold, shared with third parties, or used for
-  advertising. Build-guide zips are shared publicly by link on purpose, because they are the free downloads promised in
-  each video description.</p>
-  <h2>YouTube Terms</h2>
-  <p>By using this app you agree to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. See also the
-  <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. You can revoke access at any time at
-  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+  <h2>What is stored, and where</h2>
+  <ul>
+    <li>The OAuth refresh token is stored as a private, encrypted environment variable of the owner's cloud work
+    environment. It is never published.</li>
+    <li>The IDs of uploaded videos and the episode text (script, title, description) are stored in the owner's private
+    code repository.</li>
+    <li>No cookies or tracking are used by this app or this website.</li>
+  </ul>
+  <h2>Sharing</h2>
+  <p>No YouTube or Google user data is sold, shared with third parties, or used for advertising.</p>
+  <h2>Retention and deletion</h2>
+  <p>Stored video IDs are kept for as long as the episode exists on the channel. To delete all data held by the app:
+  revoke its access at <a href="https://myaccount.google.com/permissions">Google security settings
+  (myaccount.google.com/permissions)</a>; the stored token then stops working and is deleted from the environment
+  within 7 days, and stored video IDs are deleted on request to the contact below within 7 days. YouTube API data is
+  refreshed or deleted within 30 days as required by the YouTube API Services policies.</p>
   <h2>Contact</h2>
   <p>majed.azar7@gmail.com</p>
 </main>
